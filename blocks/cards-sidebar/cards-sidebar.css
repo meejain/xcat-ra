@@ -1,0 +1,151 @@
+.cards-sidebar {
+  width: 100%;
+}
+
+.cards-sidebar > ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+}
+
+.cards-sidebar > ul > li {
+  background: white;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  border: 1px solid #e0e0e0;
+  position: relative;
+  height: 200px;
+  display: block;
+  width: 100%;
+}
+
+.cards-sidebar > ul > li:first-child {
+  background: #1abc9c;
+  border: none;
+}
+
+.cards-sidebar > ul > li:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.cards-sidebar .cards-sidebar-card-body {
+  padding: 24px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.6) 60%, transparent 100%);
+  color: white;
+}
+
+.cards-sidebar > ul > li:first-child .cards-sidebar-card-body {
+  position: relative;
+  background: none;
+  padding: 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.cards-sidebar > ul > li:first-child .cards-sidebar-card-body p {
+  color: white;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.cards-sidebar .cards-sidebar-card-body strong {
+  display: block;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 16px;
+  line-height: 1.2;
+}
+
+.cards-sidebar > ul > li:first-child .cards-sidebar-card-body strong {
+  font-size: 1.1rem;
+  margin-bottom: 0;
+}
+
+.cards-sidebar .cards-sidebar-card-body p {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: white;
+  margin: 6px 0;
+}
+
+.cards-sidebar .cards-sidebar-card-body a {
+  display: inline-block;
+  margin-top: 12px;
+  color: #5BC0DE;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  letter-spacing: 0.05em;
+  transition: color 0.3s ease;
+}
+
+.cards-sidebar .cards-sidebar-card-body a:hover {
+  color: #7FD4E8;
+  text-decoration: underline;
+}
+
+.cards-sidebar > ul > li:first-child .cards-sidebar-card-link {
+  display: block;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  color: white;
+}
+
+.cards-sidebar > ul > li:first-child .cards-sidebar-card-link .cards-sidebar-card-body p {
+  color: white;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.cards-sidebar > ul > li:first-child:hover {
+  opacity: 0.9;
+  cursor: pointer;
+}
+
+.cards-sidebar .cards-sidebar-card-image {
+  line-height: 0;
+}
+
+.cards-sidebar > ul > li img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.cards-sidebar > ul > li:first-child img {
+  display: none;
+}
+
+@media (width >= 900px) {
+  .cards-sidebar > ul {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "variantName": "cards-sidebar",
+  "baseBlock": "cards",
+  "version": "1.0.0",
+  "created": "2025-12-16T10:30:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.researchaffiliates.com/",
+    "originPage": "homepage featured publications sidebar",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "compact",
+    "purpose": "sidebar-content",
+    "imagePattern": "icon"
+  },
+  "contentPattern": {
+    "structure": "vertical list with small thumbnails + heading + metadata",
+    "buttonCount": 0,
+    "imageCount": 3
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "sidebar content lists",
+      "related articles widgets",
+      "compact publication listings"
+    ],
+    "notSuitableFor": [
+      "full-width grids",
+      "cards without images",
+      "hero sections"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["content/index"],
+    "reuseCount": 1,
+    "lastUsed": "2025-12-16T10:30:00.000Z"
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "templates": [
+    {
+      "name": "research-affiliates-homepage",
+      "urls": [
+        "https://www.researchaffiliates.com/"
+      ],
+      "description": "Research Affiliates homepage template with hero section, navigation buttons, featured publications, and publication listings",
+      "blocks": [
+        {
+          "name": "columns-nav",
+          "instances": [
+            ".ra-grid-cols-4 .ra-grid-columns"
+          ]
+        },
+        {
+          "name": "columns-featured",
+          "instances": [
+            ".ra-grid-col-4.ra-grid-col-first .ra-component-thumbnail.thumbnail__layout--4060"
+          ]
+        },
+        {
+          "name": "cards-sidebar",
+          "instances": [
+            ".ra-grid-col-2.ra-grid-col-last .ra-component-container"
+          ]
+        },
+        {
+          "name": "cards-publications",
+          "instances": [
+            "#body-section .ra-component-thumbnail.thumbnail__layout--3070"
+          ]
+        }
+      ]
+    }
+  ]
+}

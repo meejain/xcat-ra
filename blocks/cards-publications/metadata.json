@@ -1,0 +1,39 @@
+{
+  "variantName": "cards-publications",
+  "baseBlock": "cards",
+  "version": "1.0.0",
+  "created": "2025-12-16T10:30:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.researchaffiliates.com/",
+    "originPage": "homepage publications listing",
+    "blockPosition": "bottom"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "white",
+    "density": "spacious",
+    "purpose": "publication-list",
+    "imagePattern": "large"
+  },
+  "contentPattern": {
+    "structure": "grid with large thumbnails + heading + author + date + description",
+    "buttonCount": 0,
+    "imageCount": 12
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "publication listings",
+      "article grids",
+      "blog post archives"
+    ],
+    "notSuitableFor": [
+      "sidebar content",
+      "compact lists",
+      "cards without images"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["content/index"],
+    "reuseCount": 1,
+    "lastUsed": "2025-12-16T10:30:00.000Z"
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "variantName": "columns-featured",
+  "baseBlock": "columns",
+  "version": "1.0.0",
+  "created": "2025-12-16T10:30:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.researchaffiliates.com/",
+    "originPage": "homepage featured publications section",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "spacious",
+    "purpose": "featured-content",
+    "imagePattern": "large"
+  },
+  "contentPattern": {
+    "structure": "2 columns: image | heading + text",
+    "buttonCount": 0,
+    "imageCount": 1
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "featured articles with large images",
+      "spotlight content sections",
+      "2-column layouts with prominent images"
+    ],
+    "notSuitableFor": [
+      "navigation menus",
+      "3+ column layouts",
+      "content without images"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["content/index"],
+    "reuseCount": 1,
+    "lastUsed": "2025-12-16T10:30:00.000Z"
+  }
+}
