@@ -1,0 +1,104 @@
+.columns-nav-container {
+  background: #1e3a5f;
+  color: white;
+  margin: 0 !important;
+  padding: 30px 0 40px 0;
+}
+
+.columns-nav-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+.columns-nav > div {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.columns-nav > div > div {
+  background: transparent;
+  border-left: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 15px 28px;
+  text-align: left;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.columns-nav > div > div:first-child {
+  border-left: none;
+}
+
+.columns-nav > div > div:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.columns-nav > div > div strong {
+  display: block;
+  color: #5BC0DE;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+}
+
+.columns-nav > div > div p {
+  color: white;
+  font-size: 1.35rem;
+  font-weight: 300;
+  line-height: 1.3;
+  margin: 0;
+}
+
+.columns-nav img {
+  width: 100%;
+}
+
+.columns-nav > div > .columns-nav-img-col {
+  order: 0;
+}
+
+.columns-nav > div > .columns-nav-img-col img {
+  display: block;
+}
+
+@media (width >= 900px) {
+  .columns-nav > div {
+    flex-direction: row;
+    gap: 0;
+  }
+
+  .columns-nav > div > div {
+    flex: 1;
+  }
+}
+
+@media (width <= 900px) {
+  .columns-nav-container {
+    padding: 40px 0;
+  }
+
+  .columns-nav > div {
+    gap: 1px;
+  }
+
+  .columns-nav > div > div {
+    border-left: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 20px;
+  }
+
+  .columns-nav > div > div:first-child {
+    border-top: none;
+  }
+
+  .columns-nav > div > div p {
+    font-size: 1.2rem;
+  }
+
+  .columns-nav > div > div strong {
+    margin-bottom: 16px;
+  }
+}
