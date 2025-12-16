@@ -1,0 +1,38 @@
+{
+  "variantName": "columns-nav",
+  "baseBlock": "columns",
+  "version": "1.0.0",
+  "created": "2025-12-16T10:30:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.researchaffiliates.com/",
+    "originPage": "homepage hero section",
+    "blockPosition": "top"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "dark",
+    "density": "minimal",
+    "purpose": "navigation",
+    "imagePattern": "noimg"
+  },
+  "contentPattern": {
+    "structure": "4 columns with heading + paragraph each",
+    "buttonCount": 0,
+    "imageCount": 0
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "navigation menus in hero sections",
+      "category navigation",
+      "service listings with 4 items"
+    ],
+    "notSuitableFor": [
+      "content with images",
+      "2 or 3 column layouts"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["content/index"],
+    "reuseCount": 1,
+    "lastUsed": "2025-12-16T10:30:00.000Z"
+  }
+}
