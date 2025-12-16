@@ -370,9 +370,10 @@ main .section.featured-section h2 {
 
   main .section.featured-section .cards-sidebar-wrapper {
     grid-column: 2;
-    grid-row: 2;
+    grid-row: 1 / 3;
     max-width: none !important;
     padding: 0 !important;
     margin: 0 !important;
+    margin-top: 8px !important;
   }
 }
