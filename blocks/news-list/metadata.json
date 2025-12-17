@@ -1,0 +1,39 @@
+{
+  "variantName": "news-list",
+  "baseBlock": "news-list",
+  "version": "1.0.0",
+  "created": "2025-12-17T16:47:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.researchaffiliates.com/",
+    "originPage": "homepage news section",
+    "blockPosition": "bottom"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "white",
+    "density": "compact",
+    "purpose": "news-listing",
+    "imagePattern": "noimg"
+  },
+  "contentPattern": {
+    "structure": "vertical list with source + headline + date",
+    "buttonCount": 1,
+    "imageCount": 0
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "news listings",
+      "press mentions",
+      "media coverage sections"
+    ],
+    "notSuitableFor": [
+      "content with images",
+      "sidebar content",
+      "grid layouts"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["content/index"],
+    "reuseCount": 1,
+    "lastUsed": "2025-12-17T16:47:00.000Z"
+  }
+}
