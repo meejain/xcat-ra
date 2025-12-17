@@ -2,26 +2,74 @@
   list-style: none;
   margin: 0;
   padding: 0;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(257px, 1fr));
-  gap: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
 .cards-publications > ul > li {
-  border: 1px solid #dadada;
-  background-color: var(--background-color);
-}
-
-.cards-publications .cards-publications-card-body {
-  margin: 16px;
+  border: none;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
 }
 
 .cards-publications .cards-publications-card-image {
   line-height: 0;
+  overflow: hidden;
+  order: 0;
 }
 
 .cards-publications > ul > li img {
   width: 100%;
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
+  display: block;
+}
+
+.cards-publications .cards-publications-card-body {
+  padding: 12px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  order: 1;
+}
+
+@media (width >= 900px) {
+  .cards-publications > ul > li {
+    flex-direction: row;
+    align-items: stretch;
+    min-height: 200px;
+  }
+
+  .cards-publications .cards-publications-card-image {
+    flex: 0 0 50%;
+  }
+
+  .cards-publications .cards-publications-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .cards-publications .cards-publications-card-body {
+    flex: 1;
+    order: unset;
+    padding: 12px;
+  }
+}
+
+.cards-publications .cards-publications-card-body strong {
+  display: block;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 4px;
+  line-height: 1.2;
+}
+
+.cards-publications .cards-publications-card-body p {
+  font-size: 0.8rem;
+  line-height: 1.3;
+  color: #5a6c7d;
+  margin: 2px 0;
 }
