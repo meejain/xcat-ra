@@ -1,0 +1,39 @@
+{
+  "variantName": "papers-list",
+  "baseBlock": "papers-list",
+  "version": "1.0.0",
+  "created": "2025-12-17T16:47:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.researchaffiliates.com/",
+    "originPage": "homepage papers section",
+    "blockPosition": "bottom"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "white",
+    "density": "compact",
+    "purpose": "papers-listing",
+    "imagePattern": "noimg"
+  },
+  "contentPattern": {
+    "structure": "vertical list with title + date",
+    "buttonCount": 0,
+    "imageCount": 0
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "research papers listings",
+      "academic publications",
+      "SSRN papers sections"
+    ],
+    "notSuitableFor": [
+      "content with images",
+      "full-width grids",
+      "hero sections"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["content/index"],
+    "reuseCount": 1,
+    "lastUsed": "2025-12-17T16:47:00.000Z"
+  }
+}

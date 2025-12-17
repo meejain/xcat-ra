@@ -1,0 +1,39 @@
+{
+  "variantName": "subscribe-cta",
+  "baseBlock": "subscribe-cta",
+  "version": "1.0.0",
+  "created": "2025-12-17T16:47:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.researchaffiliates.com/",
+    "originPage": "homepage subscription section",
+    "blockPosition": "bottom"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "dark",
+    "density": "minimal",
+    "purpose": "call-to-action",
+    "imagePattern": "noimg"
+  },
+  "contentPattern": {
+    "structure": "horizontal layout: text + button",
+    "buttonCount": 1,
+    "imageCount": 0
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "newsletter signups",
+      "subscription calls-to-action",
+      "email capture sections"
+    ],
+    "notSuitableFor": [
+      "content with images",
+      "multi-column layouts",
+      "navigation menus"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["content/index"],
+    "reuseCount": 1,
+    "lastUsed": "2025-12-17T16:47:00.000Z"
+  }
+}
