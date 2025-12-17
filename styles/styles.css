@@ -270,8 +270,10 @@ main .section.hero-dark > div {
 }
 
 main .section.hero-dark h2 {
+  font-family: "Whitney A", "Whitney B" !important;
+  font-style: normal !important;
+  font-weight: 300 !important;
   font-size: 5.5rem;
-  font-weight: 200;
   margin: 0 0 40px 0;
   letter-spacing: -0.01em;
   line-height: 1.1;
