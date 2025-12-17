@@ -11,12 +11,11 @@
     will-change: opacity;
     transition-property: opacity;
     transition-timing-function: ease-out;
-    margin: calc(1rem * 1) 0;
-    padding: calc(1rem * 1);
     background-color: #152b4d !important;
     opacity: 1!important;
     transition-duration: .4s;
     display: block;
+    width: 65%;
 }
 
 .subscribe-cta > div {
@@ -27,8 +26,6 @@
     -webkit-text-size-adjust: none;
     margin: 0;
     padding: 0;
-    padding-left: 1rem;
-    padding-right: 1rem;
     border: 0;
     font-size: 100%;
     vertical-align: baseline;
@@ -36,6 +33,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 1rem;
 }
 
 .subscribe-cta p:first-child {
@@ -57,7 +55,7 @@
 .subscribe-cta a {
   display: inline-block;
   background-color: white !important;
-  color: #0066cc !important;
+  color: #0061a5 !important;
   padding: 16px 48px;
   border-radius: 50px;
   text-decoration: none;
