@@ -1,16 +1,41 @@
 .subscribe-cta {
-  background-color: #152b4d !important;
-  padding: 1.5rem 2rem;
-  border-radius: 40px;
-  margin: 0;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  gap: 2rem;
-  opacity: 1 !important;
-  transition: opacity 0.4s ease-out;
-  will-change: opacity;
+  color: #6A698E;
+    font-family: 'Whitney A', 'Whitney B', sans-serif;
+    font-weight: 400;
+    line-height: calc(1em * 1.5);
+    -webkit-text-size-adjust: none;
+    border: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    border-radius: 40px;
+    will-change: opacity;
+    transition-property: opacity;
+    transition-timing-function: ease-out;
+    margin: calc(1rem * 1) 0;
+    padding: calc(1rem * 1);
+    background-color: #152b4d !important;
+    opacity: 1!important;
+    transition-duration: .4s;
+    display: block;
+}
+
+.subscribe-cta > div {
+  color: #6A698E;
+    font-family: 'Whitney A', 'Whitney B', sans-serif;
+    font-weight: 400;
+    line-height: calc(1em * 1.5);
+    -webkit-text-size-adjust: none;
+    margin: 0;
+    padding: 0;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    border: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    transition: opacity .4s ease-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .subscribe-cta p:first-child {
