@@ -1,0 +1,20 @@
+.sidebar-featured {
+  width: 100%;
+  margin-bottom: 32px;
+}
+
+.sidebar-featured-link {
+  display: block;
+  width: 100%;
+  transition: opacity 0.3s ease;
+}
+
+.sidebar-featured-link:hover {
+  opacity: 0.95;
+}
+
+.sidebar-featured img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
