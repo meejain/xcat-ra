@@ -1,0 +1,50 @@
+.papers-list {
+  background: white;
+  padding: 8px;
+  margin-bottom: 8px;
+  margin-top: 0;
+}
+
+.papers-list-heading {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #2c3e50;
+  margin: 0 0 20px 0;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #d0d0d0;
+}
+
+.papers-list ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.papers-list li {
+  padding: 10px 0;
+  border-bottom: 1px solid #e8e8e8;
+}
+
+.papers-list li:last-child {
+  border-bottom: none;
+}
+
+.papers-list li strong {
+  display: block;
+  color: #2c3e50;
+  font-size: 0.95rem;
+  font-weight: 600;
+  line-height: 1.4;
+  margin-bottom: 6px;
+}
+
+.papers-list li br + br {
+  display: block;
+  content: "";
+  margin-top: 4px;
+}
+
+.papers-list li {
+  color: #666;
+  font-size: 0.85rem;
+}
