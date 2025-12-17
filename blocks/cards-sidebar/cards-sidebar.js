@@ -11,29 +11,18 @@ export default function decorate(block) {
       else div.className = 'cards-sidebar-card-body';
     });
 
-    // Make the first card (newsletter signup) clickable by wrapping in a link
+    // For the first card (newsletter signup), just ensure proper text structure
     if (index === 0) {
       const cardBody = li.querySelector('.cards-sidebar-card-body');
-      if (cardBody && cardBody.querySelector('a')) {
-        const link = cardBody.querySelector('a');
-        const href = link.href;
-        const linkText = link.textContent;
-
-        // Replace link with paragraph containing the text
-        const p = document.createElement('p');
-        p.textContent = linkText;
-        link.replaceWith(p);
-
-        // Wrap entire card in a link
-        const wrapperLink = document.createElement('a');
-        wrapperLink.href = href;
-        wrapperLink.className = 'cards-sidebar-card-link';
-        wrapperLink.style.cssText = 'display: block; width: 100%; height: 100%; text-decoration: none;';
-
-        while (li.firstChild) {
-          wrapperLink.appendChild(li.firstChild);
+      if (cardBody && !cardBody.querySelector('p')) {
+        // Wrap text content in a paragraph if not already wrapped
+        const text = cardBody.textContent.trim();
+        if (text) {
+          const p = document.createElement('p');
+          p.textContent = text;
+          cardBody.innerHTML = '';
+          cardBody.appendChild(p);
         }
-        li.appendChild(wrapperLink);
       }
     }
 
