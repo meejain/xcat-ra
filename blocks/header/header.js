@@ -117,7 +117,7 @@ export default async function decorate(block) {
   const navData = {
     brand: {
       href: '/home',
-      logo: './images/header-logo.svg',
+      logo: '/content/images/header-logo.svg',
       alt: 'Research Affiliates'
     },
     sections: [
