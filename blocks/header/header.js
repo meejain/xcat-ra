@@ -75,7 +75,7 @@ function toggleMenu(nav, navSections, forceExpanded = null) {
   document.body.style.overflowY = (expanded || isDesktop.matches) ? '' : 'hidden';
   nav.setAttribute('aria-expanded', expanded ? 'false' : 'true');
   if (navSections) {
-    toggleAllNavSections(navSections, expanded || isDesktop.matches ? 'false' : 'true');
+    toggleAllNavSections(navSections, expanded || isDesktop.matches ? false : true);
   }
   button.setAttribute('aria-label', expanded ? 'Open navigation' : 'Close navigation');
   // enable nav dropdown keyboard accessibility
@@ -276,6 +276,12 @@ export default async function decorate(block) {
   hamburger.addEventListener('click', () => toggleMenu(nav, navSections));
   nav.prepend(hamburger);
   nav.setAttribute('aria-expanded', 'false');
+
+  // Initialize all dropdown sections as collapsed
+  if (navSections) {
+    toggleAllNavSections(navSections, false);
+  }
+
   // prevent mobile nav behavior on window resize
   toggleMenu(nav, navSections, isDesktop.matches);
   isDesktop.addEventListener('change', () => toggleMenu(nav, navSections, isDesktop.matches));
