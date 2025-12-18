@@ -181,15 +181,38 @@ header nav .nav-sections > li {
   margin: 0;
 }
 
-header nav .nav-sections > li > a {
-  color: #4a4a4a;
+/* Override button styling for navigation links */
+header nav .nav-sections > li > .button-container,
+header nav .nav-sections > li > p.button-container {
+  margin: 0;
+  display: contents;
+}
+
+header nav .nav-sections > li > a,
+header nav .nav-sections > li > .button-container > a,
+header nav .nav-sections > li > p > a,
+header nav .nav-sections > li a.button {
+  color: rgb(43, 42, 42) !important;
   text-decoration: none;
   transition: color 0.3s ease;
   white-space: nowrap;
+  background-color: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
+  padding: 0 24px !important;
+  margin: 0 !important;
+  font-size: 16px;
+  font-weight: 400;
+  display: flex;
+  align-items: center;
 }
 
-header nav .nav-sections > li > a:hover {
-  color: #2c7cb5;
+header nav .nav-sections > li > a:hover,
+header nav .nav-sections > li > .button-container > a:hover,
+header nav .nav-sections > li > p > a:hover,
+header nav .nav-sections > li a.button:hover {
+  color: #2c7cb5 !important;
+  background-color: transparent !important;
 }
 
 header nav .nav-sections > li > ul {
@@ -290,17 +313,24 @@ header nav .nav-tools li {
 }
 
 header nav .nav-tools a {
-  color: #4a4a4a;
+  color: rgb(43, 42, 42);
   text-decoration: none;
   font-size: 14px;
   transition: color 0.3s ease;
   display: flex;
   align-items: center;
   gap: 8px;
+  background-color: transparent;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  margin: 0;
+  font-weight: 400;
 }
 
 header nav .nav-tools a:hover {
   color: #2c7cb5;
+  background-color: transparent;
 }
 
 header nav .nav-tools a::before {
