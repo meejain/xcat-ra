@@ -1,24 +1,184 @@
 footer {
-  background-color: #000000;
+  background-color: #1a1a1a;
   color: #ffffff;
   font-size: 14px;
   padding: 0;
 }
 
-footer .footer {
+footer .footer > div {
   margin: auto;
 }
+
+footer .footer p {
+  margin: 0;
+}
+
+/* ========================================
+   LOCAL WORKSPACE STRUCTURE (footer.js loads nested structure)
+   ======================================== */
+
+/* First ribbon - Logo section */
+footer .footer > div > p:first-child {
+  position: relative;
+  margin-bottom: 0;
+  padding: 30px 0;
+  border-bottom: 1px solid #2a2a2a;
+  background-color: #28292B;
+}
+
+footer .footer > div > p:first-child::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100vw;
+  right: -100vw;
+  bottom: 0;
+  background-color: #28292B;
+  z-index: -1;
+  border-bottom: 1px solid #2a2a2a;
+}
+
+footer .footer > div > p:first-child img {
+  height: 45px;
+  width: auto;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 32px;
+  display: block;
+}
+
+/* Main ribbon - 4 column navigation grid */
+footer .footer > div > div:first-of-type {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 60px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 50px 32px 40px 32px;
+  border-bottom: 1px solid #2a2a2a;
+  background-color: #000000;
+}
+
+footer .footer > div > div:first-of-type::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100vw;
+  right: -100vw;
+  bottom: 0;
+  background-color: #000000;
+  z-index: -1;
+  border-bottom: 1px solid #2a2a2a;
+}
+
+footer .footer ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+footer .footer li {
+  margin-bottom: 12px;
+}
+
+footer .footer li:first-child {
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #ffffff;
+  font-size: 15px;
+  letter-spacing: 0.02em;
+}
+
+footer .footer a {
+  color: #999999;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+footer .footer a:hover {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+/* Social media icons section */
+footer .footer > div > ul {
+  display: flex;
+  gap: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 32px;
+  border-bottom: 1px solid #2a2a2a;
+}
+
+footer .footer > div > ul img {
+  width: 26px;
+  height: 26px;
+  fill: #999999;
+  transition: opacity 0.3s ease;
+  opacity: 0.7;
+}
+
+footer .footer > div > ul a:hover img {
+  opacity: 1;
+}
+
+/* Bottom section - Copyright and legal links */
+footer .footer > div > div:last-child {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 32px 60px 32px;
+}
+
+footer .footer > div > div:last-child p {
+  color: #999999;
+  font-size: 13px;
+}
+
+footer .footer > div > div:last-child ul {
+  display: flex;
+  gap: 30px;
+}
+
+footer .footer > div > div:last-child a {
+  color: #999999;
+  font-size: 13px;
+}
+
+/* ========================================
+   DA STRUCTURE (flattened .default-content-wrapper)
+   ======================================== */
 
 footer .default-content-wrapper {
   max-width: 1200px;
   margin: 0 auto;
 }
 
-footer p {
+footer .default-content-wrapper p {
   margin: 0;
 }
 
-/* First ribbon - Logo section */
+/* Only apply grid layout when default-content-wrapper has direct ul children */
+footer .default-content-wrapper:has(> ul) {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 60px;
+  padding: 50px 32px 40px 32px;
+  position: relative;
+  background-color: #000000;
+  margin-left: -100vw;
+  margin-right: -100vw;
+  padding-left: calc(100vw - 50%);
+  padding-right: calc(100vw - 50%);
+  border-bottom: 1px solid #2a2a2a;
+}
+
+/* Logo section in DA */
 footer .default-content-wrapper > p:first-child {
   position: relative;
   margin: 0;
@@ -29,6 +189,9 @@ footer .default-content-wrapper > p:first-child {
   margin-right: -100vw;
   padding-left: calc(100vw - 50%);
   padding-right: calc(100vw - 50%);
+  grid-column: 1 / -1;
+  margin-top: -50px;
+  margin-bottom: 10px;
 }
 
 footer .default-content-wrapper > p:first-child picture {
@@ -43,44 +206,16 @@ footer .default-content-wrapper > p:first-child img {
   display: block;
 }
 
-/* Navigation grid - target the 4 navigation list groups */
-footer .default-content-wrapper > ul:nth-of-type(1),
-footer .default-content-wrapper > ul:nth-of-type(2),
-footer .default-content-wrapper > ul:nth-of-type(3),
-footer .default-content-wrapper > ul:nth-of-type(4),
-footer .default-content-wrapper > ul:nth-of-type(5),
-footer .default-content-wrapper > ul:nth-of-type(6),
-footer .default-content-wrapper > ul:nth-of-type(7) {
+/* Navigation lists in DA */
+footer .default-content-wrapper > ul {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-/* Create grid container for first 7 lists (navigation columns) */
-footer .default-content-wrapper {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 60px;
-  padding: 50px 32px 40px 32px;
-  position: relative;
-  background-color: #000000;
-  margin-left: -100vw;
-  margin-right: -100vw;
-  padding-left: calc(100vw - 50%);
-  padding-right: calc(100vw - 50%);
-  border-bottom: 1px solid #2a2a2a;
-}
-
-/* Logo takes full width (4 columns) and breaks out of grid */
-footer .default-content-wrapper > p:first-child {
-  grid-column: 1 / -1;
-  margin: -50px -32px 10px -32px;
-  padding: 30px 32px;
-}
-
-/* First 7 ul elements are the navigation columns - each gets 1 column */
 footer .default-content-wrapper > ul:nth-of-type(1) {
   grid-column: 1;
+  grid-row: 2;
 }
 
 footer .default-content-wrapper > ul:nth-of-type(2) {
@@ -105,9 +240,10 @@ footer .default-content-wrapper > ul:nth-of-type(5) {
 
 footer .default-content-wrapper > ul:nth-of-type(6) {
   grid-column: 4;
+  grid-row: 2;
 }
 
-/* Social media icons - 8th ul - takes full width */
+/* Social media icons - 7th ul in DA */
 footer .default-content-wrapper > ul:nth-of-type(7) {
   grid-column: 1 / -1;
   display: flex;
@@ -117,50 +253,6 @@ footer .default-content-wrapper > ul:nth-of-type(7) {
   border-top: 1px solid #2a2a2a;
 }
 
-/* Copyright paragraph and legal links list - take full width */
-footer .default-content-wrapper > p:last-of-type {
-  grid-column: 1 / span 2;
-  color: #999999;
-  font-size: 13px;
-  margin: 10px -32px -40px -32px;
-  padding: 40px 32px 60px 32px;
-}
-
-footer .default-content-wrapper > ul:nth-of-type(8) {
-  grid-column: 3 / -1;
-  display: flex;
-  gap: 30px;
-  justify-content: flex-end;
-  margin: 10px -32px -40px -32px;
-  padding: 40px 32px 60px 32px;
-  list-style: none;
-}
-
-/* Navigation list styling */
-footer ul li {
-  margin-bottom: 12px;
-}
-
-footer ul li:first-child {
-  font-weight: 700;
-  margin-bottom: 20px;
-  color: #ffffff;
-  font-size: 15px;
-  letter-spacing: 0.02em;
-}
-
-footer a {
-  color: #999999;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-footer a:hover {
-  color: #ffffff;
-  text-decoration: none;
-}
-
-/* Social media icons */
 footer .default-content-wrapper > ul:nth-of-type(7) li {
   margin-bottom: 0;
 }
@@ -176,7 +268,26 @@ footer .default-content-wrapper > ul:nth-of-type(7) a:hover img {
   opacity: 1;
 }
 
-/* Legal links styling */
+/* Copyright paragraph in DA */
+footer .default-content-wrapper > p:last-of-type {
+  grid-column: 1 / span 2;
+  color: #999999;
+  font-size: 13px;
+  margin: 10px -32px -40px -32px;
+  padding: 40px 32px 60px 32px;
+}
+
+/* Legal links - 8th ul in DA */
+footer .default-content-wrapper > ul:nth-of-type(8) {
+  grid-column: 3 / -1;
+  display: flex;
+  gap: 30px;
+  justify-content: flex-end;
+  margin: 10px -32px -40px -32px;
+  padding: 40px 32px 60px 32px;
+  list-style: none;
+}
+
 footer .default-content-wrapper > ul:nth-of-type(8) li {
   margin-bottom: 0;
 }
@@ -191,8 +302,19 @@ footer .default-content-wrapper > ul:nth-of-type(8) a {
   font-size: 13px;
 }
 
+/* ========================================
+   RESPONSIVE STYLES
+   ======================================== */
+
 @media (width <= 900px) {
-  footer .default-content-wrapper {
+  /* Local workspace */
+  footer .footer > div > div:first-of-type {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+
+  /* DA structure */
+  footer .default-content-wrapper:has(> ul) {
     grid-template-columns: repeat(2, 1fr);
     gap: 30px;
   }
@@ -229,7 +351,34 @@ footer .default-content-wrapper > ul:nth-of-type(8) a {
 }
 
 @media (width <= 600px) {
-  footer .default-content-wrapper {
+  /* Local workspace */
+  footer .footer > div > p:first-child img {
+    padding: 0 24px;
+  }
+
+  footer .footer > div > div:first-of-type {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    padding: 40px 24px 30px 24px;
+  }
+
+  footer .footer > div > ul {
+    padding: 40px 24px;
+  }
+
+  footer .footer > div > div:last-child {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 40px 24px 40px 24px;
+  }
+
+  footer .footer > div > div:last-child ul {
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+
+  /* DA structure */
+  footer .default-content-wrapper:has(> ul) {
     grid-template-columns: 1fr;
     gap: 30px;
     padding: 40px 24px 30px 24px;
