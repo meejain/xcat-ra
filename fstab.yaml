@@ -1,0 +1,4 @@
+mountpoints:
+  /:
+    url: https://content.da.live/meejain/xcat-ra/
+    type: markup
