@@ -52,6 +52,12 @@ footer .footer > div > .section:first-of-type {
   position: relative;
   background-color: #000000;
   border-bottom: 1px solid #2a2a2a;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 60px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 50px 32px 40px 32px;
 }
 
 footer .footer > div > .section:first-of-type::before {
@@ -64,16 +70,6 @@ footer .footer > div > .section:first-of-type::before {
   background-color: #000000;
   z-index: -1;
   border-bottom: 1px solid #2a2a2a;
-}
-
-/* 4 column navigation grid */
-footer .footer > div > .section:first-of-type > div {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 60px;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 50px 32px 40px 32px;
 }
 
 footer .footer ul {
@@ -331,7 +327,7 @@ footer .default-content-wrapper > ul:nth-of-type(8) a {
 
 @media (width <= 900px) {
   /* Local workspace */
-  footer .footer > div > .section:first-of-type > div {
+  footer .footer > div > .section:first-of-type {
     grid-template-columns: repeat(2, 1fr);
     gap: 30px;
   }
@@ -379,7 +375,7 @@ footer .default-content-wrapper > ul:nth-of-type(8) a {
     padding: 0 24px;
   }
 
-  footer .footer > div > .section:first-of-type > div {
+  footer .footer > div > .section:first-of-type {
     grid-template-columns: 1fr;
     gap: 30px;
     padding: 40px 24px 30px 24px;
