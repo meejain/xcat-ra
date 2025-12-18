@@ -129,10 +129,23 @@ export default async function decorate(block) {
     nav.append(fragmentContent.firstElementChild);
   }
 
-  // Add class to brand paragraph
+  // Add class to brand paragraph and ensure logo link is present
   const brandP = nav.querySelector(':scope > p');
   if (brandP) {
     brandP.className = 'nav-brand';
+
+    // Handle case where AEM image optimization strips the link wrapper
+    const brandLink = brandP.querySelector('a');
+    const brandImg = brandP.querySelector('img, picture');
+
+    if (brandImg && !brandLink) {
+      // Wrap image/picture in link if it's missing
+      const link = document.createElement('a');
+      link.href = '/home';
+      link.setAttribute('aria-label', 'Research Affiliates Home');
+      brandImg.parentElement.insertBefore(link, brandImg);
+      link.appendChild(brandImg);
+    }
   }
 
   // Find and setup sections and tools
