@@ -276,15 +276,22 @@ footer .default-content-wrapper > ul:nth-of-type(7) li {
   margin-bottom: 0;
 }
 
-footer .default-content-wrapper > ul:nth-of-type(7) img {
+footer .default-content-wrapper > ul:nth-of-type(7) img,
+footer .default-content-wrapper > ul:nth-of-type(7) picture img {
   width: 26px;
   height: 26px;
   transition: opacity 0.3s ease;
   opacity: 0.7;
 }
 
-footer .default-content-wrapper > ul:nth-of-type(7) a:hover img {
+footer .default-content-wrapper > ul:nth-of-type(7) a:hover img,
+footer .default-content-wrapper > ul:nth-of-type(7) a:hover picture img {
   opacity: 1;
+}
+
+footer .default-content-wrapper > ul:nth-of-type(7) picture {
+  display: block;
+  line-height: 0;
 }
 
 /* Copyright paragraph in DA */
