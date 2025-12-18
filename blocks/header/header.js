@@ -118,6 +118,12 @@ export default async function decorate(block) {
   const navPath = navMeta ? new URL(navMeta, window.location).pathname : '/nav';
   const fragment = await loadFragment(navPath);
 
+  if (!fragment) {
+    // eslint-disable-next-line no-console
+    console.error('Failed to load navigation fragment from:', navPath);
+    return;
+  }
+
   // decorate nav DOM
   block.textContent = '';
   const nav = document.createElement('nav');
