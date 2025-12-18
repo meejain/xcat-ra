@@ -1,9 +1,11 @@
 /* header and nav layout */
 header .nav-wrapper {
-  background-color: var(--background-color);
+  background-color: #ffffff;
   width: 100%;
   z-index: 2;
   position: fixed;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  border-bottom: 1px solid #e5e5e5;
 }
 
 header nav {
@@ -15,9 +17,9 @@ header nav {
   align-items: center;
   gap: 0 24px;
   margin: auto;
-  max-width: 1248px;
+  max-width: 1340px;
   height: var(--nav-height);
-  padding: 0 24px;
+  padding: 0 40px;
   font-family: var(--body-font-family);
 }
 
@@ -39,8 +41,8 @@ header nav[aria-expanded='true'] {
     display: flex;
     justify-content: space-between;
     gap: 0 32px;
-    max-width: 1264px;
-    padding: 0 32px;
+    max-width: 1340px;
+    padding: 0 40px;
   }
 
   header nav[aria-expanded='true'] {
@@ -142,14 +144,14 @@ header nav[aria-expanded='true'] .nav-hamburger-icon::after {
 /* brand */
 header .nav-brand {
   grid-area: brand;
-  flex-basis: 128px;
+  flex-basis: 180px;
   font-size: var(--heading-font-size-s);
   font-weight: 700;
   line-height: 1;
 }
 
 header nav .nav-brand img {
-  width: 128px;
+  width: 180px;
   height: auto;
 }
 
@@ -170,11 +172,21 @@ header nav[aria-expanded='true'] .nav-sections {
 header nav .nav-sections ul {
   list-style: none;
   padding-left: 0;
-  font-size: var(--body-font-size-s);
+  font-size: 15px;
 }
 
 header nav .nav-sections ul > li {
-  font-weight: 500;
+  font-weight: 400;
+}
+
+header nav .nav-sections ul > li > a {
+  color: #333333;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+header nav .nav-sections ul > li > a:hover {
+  color: #0066cc;
 }
 
 header nav .nav-sections ul > li > ul {
@@ -269,4 +281,28 @@ header nav .nav-sections ul > li > ul > li {
 /* tools */
 header nav .nav-tools {
   grid-area: tools;
+}
+
+header nav .nav-tools ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 24px;
+  align-items: center;
+}
+
+header nav .nav-tools ul li {
+  margin: 0;
+}
+
+header nav .nav-tools a {
+  color: #666666;
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.3s ease;
+}
+
+header nav .nav-tools a:hover {
+  color: #0066cc;
 }
