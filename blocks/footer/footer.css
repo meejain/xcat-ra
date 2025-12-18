@@ -2,13 +2,11 @@ footer {
   background-color: #1a1a1a;
   color: #ffffff;
   font-size: 14px;
-  padding: 60px 0 40px;
+  padding: 0;
 }
 
 footer .footer > div {
   margin: auto;
-  max-width: 1200px;
-  padding: 0 32px;
 }
 
 footer .footer p {
@@ -17,23 +15,56 @@ footer .footer p {
 
 /* First ribbon - Logo section */
 footer .footer > div > p:first-child {
-  margin-bottom: 50px;
-  padding-bottom: 30px;
+  position: relative;
+  margin-bottom: 0;
+  padding: 30px 0;
+  border-bottom: 1px solid #2a2a2a;
+  background-color: #28292B;
+}
+
+footer .footer > div > p:first-child::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100vw;
+  right: -100vw;
+  bottom: 0;
+  background-color: #28292B;
+  z-index: -1;
   border-bottom: 1px solid #2a2a2a;
 }
 
 footer .footer > div > p:first-child img {
   height: 45px;
   width: auto;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 32px;
+  display: block;
 }
 
 /* Main ribbon - 4 column navigation grid */
 footer .footer > div > div:first-of-type {
+  position: relative;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 60px;
-  margin-bottom: 50px;
-  padding-bottom: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 50px 32px 40px 32px;
+  border-bottom: 1px solid #2a2a2a;
+  background-color: #000000;
+}
+
+footer .footer > div > div:first-of-type::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100vw;
+  right: -100vw;
+  bottom: 0;
+  background-color: #000000;
+  z-index: -1;
   border-bottom: 1px solid #2a2a2a;
 }
 
@@ -70,8 +101,9 @@ footer .footer a:hover {
 footer .footer > div > ul {
   display: flex;
   gap: 24px;
-  margin-bottom: 40px;
-  padding-bottom: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 32px;
   border-bottom: 1px solid #2a2a2a;
 }
 
@@ -94,7 +126,9 @@ footer .footer > div > div:last-child {
   align-items: center;
   flex-wrap: wrap;
   gap: 20px;
-  padding-top: 0;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 32px 60px 32px;
 }
 
 footer .footer > div > div:last-child p {
@@ -120,22 +154,24 @@ footer .footer > div > div:last-child a {
 }
 
 @media (width <= 600px) {
-  footer {
-    padding: 40px 0 30px;
-  }
-
-  footer .footer > div {
+  footer .footer > div > p:first-child img {
     padding: 0 24px;
   }
 
   footer .footer > div > div:first-of-type {
     grid-template-columns: 1fr;
     gap: 30px;
+    padding: 40px 24px 30px 24px;
+  }
+
+  footer .footer > div > ul {
+    padding: 40px 24px;
   }
 
   footer .footer > div > div:last-child {
     flex-direction: column;
     align-items: flex-start;
+    padding: 40px 24px 40px 24px;
   }
 
   footer .footer > div > div:last-child ul {
