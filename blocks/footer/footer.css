@@ -187,7 +187,7 @@ footer .default-content-wrapper p {
 
 /* Only apply grid layout when default-content-wrapper has direct ul children */
 footer .default-content-wrapper:has(> ul) {
-  display: grid;
+  display: grid !important;
   grid-template-columns: repeat(4, 1fr);
   gap: 60px;
   padding: 50px 32px 40px 32px;
