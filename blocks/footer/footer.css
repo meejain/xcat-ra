@@ -190,42 +190,54 @@ footer .default-content-wrapper:has(> ul) {
   display: grid !important;
   grid-template-columns: repeat(4, 1fr);
   gap: 60px;
-  padding: 50px 32px 40px 32px;
+  padding: 0 32px;
+  max-width: 1200px;
+  margin: 0 auto;
   position: relative;
+}
+
+footer .default-content-wrapper:has(> ul)::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100vw;
+  right: -100vw;
+  bottom: 0;
   background-color: #000000;
-  margin-left: -100vw;
-  margin-right: -100vw;
-  padding-left: calc(100vw - 50%);
-  padding-right: calc(100vw - 50%);
-  border-bottom: 1px solid #2a2a2a;
+  z-index: -1;
 }
 
 /* Logo section in DA */
 footer .default-content-wrapper > p:first-child {
   position: relative;
   margin: 0;
-  padding: 30px 32px;
+  padding: 30px 0;
+  grid-column: 1 / -1;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+footer .default-content-wrapper > p:first-child::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100vw;
+  right: -100vw;
+  bottom: 0;
   background-color: #28292B;
   border-bottom: 1px solid #2a2a2a;
-  margin-left: -100vw;
-  margin-right: -100vw;
-  padding-left: calc(100vw - 50%);
-  padding-right: calc(100vw - 50%);
-  grid-column: 1 / -1;
-  margin-top: -50px;
-  margin-bottom: 10px;
+  z-index: -1;
 }
 
 footer .default-content-wrapper > p:first-child picture {
-  display: block;
+  display: inline-block;
   max-width: 1200px;
-  margin: 0 auto;
 }
 
 footer .default-content-wrapper > p:first-child img {
   height: 45px;
   width: auto;
-  display: block;
+  display: inline-block;
 }
 
 /* Navigation lists in DA */
@@ -270,9 +282,10 @@ footer .default-content-wrapper > ul:nth-of-type(7) {
   grid-column: 1 / -1;
   display: flex;
   gap: 24px;
-  margin: 30px -32px -40px -32px;
-  padding: 40px 32px;
+  margin: 50px 0 0 0;
+  padding: 40px 0;
   border-top: 1px solid #2a2a2a;
+  justify-content: center;
 }
 
 footer .default-content-wrapper > ul:nth-of-type(7) li {
@@ -302,8 +315,8 @@ footer .default-content-wrapper > p:last-of-type {
   grid-column: 1 / span 2;
   color: #999999;
   font-size: 13px;
-  margin: 10px -32px -40px -32px;
-  padding: 40px 32px 60px 32px;
+  margin: 0;
+  padding: 40px 0 60px 0;
 }
 
 /* Legal links - 8th ul in DA */
@@ -312,8 +325,8 @@ footer .default-content-wrapper > ul:nth-of-type(8) {
   display: flex;
   gap: 30px;
   justify-content: flex-end;
-  margin: 10px -32px -40px -32px;
-  padding: 40px 32px 60px 32px;
+  margin: 0;
+  padding: 40px 0 60px 0;
   list-style: none;
 }
 
