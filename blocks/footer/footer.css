@@ -14,7 +14,7 @@ footer .footer p {
 }
 
 /* ========================================
-   LOCAL WORKSPACE STRUCTURE (footer.js loads nested structure)
+   LOCAL WORKSPACE STRUCTURE
    ======================================== */
 
 /* First ribbon - Logo section */
@@ -47,20 +47,14 @@ footer .footer > div > p:first-child img {
   display: block;
 }
 
-/* Main ribbon - 4 column navigation grid */
-footer .footer > div > div:first-of-type {
+/* Main navigation section - contains the grid */
+footer .footer > div > .section:first-of-type {
   position: relative;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 60px;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 50px 32px 40px 32px;
-  border-bottom: 1px solid #2a2a2a;
   background-color: #000000;
+  border-bottom: 1px solid #2a2a2a;
 }
 
-footer .footer > div > div:first-of-type::before {
+footer .footer > div > .section:first-of-type::before {
   content: '';
   position: absolute;
   top: 0;
@@ -70,6 +64,16 @@ footer .footer > div > div:first-of-type::before {
   background-color: #000000;
   z-index: -1;
   border-bottom: 1px solid #2a2a2a;
+}
+
+/* 4 column navigation grid */
+footer .footer > div > .section:first-of-type > div {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 60px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 50px 32px 40px 32px;
 }
 
 footer .footer ul {
@@ -101,7 +105,7 @@ footer .footer a:hover {
   text-decoration: none;
 }
 
-/* Social media icons section */
+/* Social media icons section - direct child of .footer > div */
 footer .footer > div > ul {
   display: flex;
   gap: 24px;
@@ -109,12 +113,12 @@ footer .footer > div > ul {
   margin: 0 auto;
   padding: 40px 32px;
   border-bottom: 1px solid #2a2a2a;
+  list-style: none;
 }
 
 footer .footer > div > ul img {
   width: 26px;
   height: 26px;
-  fill: #999999;
   transition: opacity 0.3s ease;
   opacity: 0.7;
 }
@@ -123,30 +127,49 @@ footer .footer > div > ul a:hover img {
   opacity: 1;
 }
 
+footer .footer > div > ul li {
+  margin-bottom: 0;
+}
+
+footer .footer > div > ul li:first-child {
+  font-weight: 400;
+  margin-bottom: 0;
+}
+
 /* Bottom section - Copyright and legal links */
-footer .footer > div > div:last-child {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 20px;
+footer .footer > div > .section:last-of-type {
   max-width: 1200px;
   margin: 0 auto;
   padding: 40px 32px 60px 32px;
 }
 
-footer .footer > div > div:last-child p {
+footer .footer > div > .section:last-of-type .default-content-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+footer .footer > div > .section:last-of-type p {
   color: #999999;
   font-size: 13px;
 }
 
-footer .footer > div > div:last-child ul {
+footer .footer > div > .section:last-of-type ul {
   display: flex;
   gap: 30px;
+  list-style: none;
 }
 
-footer .footer > div > div:last-child a {
+footer .footer > div > .section:last-of-type a {
   color: #999999;
+  font-size: 13px;
+}
+
+footer .footer > div > .section:last-of-type li:first-child {
+  font-weight: 400;
+  margin-bottom: 0;
   font-size: 13px;
 }
 
@@ -308,7 +331,7 @@ footer .default-content-wrapper > ul:nth-of-type(8) a {
 
 @media (width <= 900px) {
   /* Local workspace */
-  footer .footer > div > div:first-of-type {
+  footer .footer > div > .section:first-of-type > div {
     grid-template-columns: repeat(2, 1fr);
     gap: 30px;
   }
@@ -356,7 +379,7 @@ footer .default-content-wrapper > ul:nth-of-type(8) a {
     padding: 0 24px;
   }
 
-  footer .footer > div > div:first-of-type {
+  footer .footer > div > .section:first-of-type > div {
     grid-template-columns: 1fr;
     gap: 30px;
     padding: 40px 24px 30px 24px;
@@ -366,13 +389,16 @@ footer .default-content-wrapper > ul:nth-of-type(8) a {
     padding: 40px 24px;
   }
 
-  footer .footer > div > div:last-child {
-    flex-direction: column;
-    align-items: flex-start;
+  footer .footer > div > .section:last-of-type {
     padding: 40px 24px 40px 24px;
   }
 
-  footer .footer > div > div:last-child ul {
+  footer .footer > div > .section:last-of-type .default-content-wrapper {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  footer .footer > div > .section:last-of-type ul {
     flex-wrap: wrap;
     gap: 15px;
   }
