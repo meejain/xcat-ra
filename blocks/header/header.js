@@ -113,118 +113,40 @@ function toggleMenu(nav, navSections, forceExpanded = null) {
  * @param {Element} block The header block element
  */
 export default async function decorate(block) {
-  // Define navigation structure directly to avoid AEM server flattening nested HTML
-  const navData = {
-    brand: {
-      href: '/home',
-      logo: './images/header-logo.svg',
-      alt: 'Research Affiliates'
-    },
-    sections: [
-      {
-        title: 'Insights',
-        href: '/insights/publications',
-        items: [
-          { title: 'RA Publications', href: '/insights/publications' },
-          { title: 'Journal & Working Papers', href: '/insights/journal-papers' },
-          { title: 'JPM 50th Series', href: '/insights/jpm-50-tribute' },
-          { title: 'Multimedia', href: '/insights/multimedia' },
-          { title: 'Explore Smart Beta', href: '/insights/smart-beta' },
-          { title: 'ESG Investing', href: '/insights/esg' }
-        ]
-      },
-      {
-        title: 'Solutions',
-        href: '/solutions'
-      },
-      {
-        title: 'Tools',
-        href: 'https://interactive.researchaffiliates.com/asset-allocation'
-      },
-      {
-        title: 'How to Invest',
-        href: '/how-to-invest/mutual-funds-etfs',
-        items: [
-          { title: 'Mutual Funds & ETFs', href: '/how-to-invest/mutual-funds-etfs' },
-          { title: 'Institutional, SMAs, and Commingled', href: '/how-to-invest/institutional' }
-        ]
-      },
-      {
-        title: 'Our Company',
-        href: '/about-us',
-        items: [
-          { title: 'About Us', href: '/about-us' },
-          { title: 'Our Team', href: '/about-us/our-team' },
-          { title: 'Careers', href: '/about-us/careers' },
-          { title: 'Technology', href: '/about-us/technology' },
-          { title: 'Contact Us', href: '/about-us/contact-us' },
-          { title: 'In the News', href: '/about-us/in-the-news' }
-        ]
-      }
-    ],
-    tools: [
-      { title: 'Log in / Subscribe', href: '/subscribe' },
-      { title: 'Search', href: '/search' }
-    ]
-  };
+  // Load nav content from fragment
+  const navMeta = getMetadata('nav');
+  const navPath = navMeta ? new URL(navMeta, window.location).pathname : '/nav';
+  const fragment = await loadFragment(navPath);
 
   // decorate nav DOM
   block.textContent = '';
   const nav = document.createElement('nav');
   nav.id = 'nav';
 
-  // Build brand section
-  const brandP = document.createElement('p');
-  brandP.className = 'nav-brand';
-  const brandLink = document.createElement('a');
-  brandLink.href = navData.brand.href;
-  const brandImg = document.createElement('img');
-  brandImg.src = navData.brand.logo;
-  brandImg.alt = navData.brand.alt;
-  brandLink.append(brandImg);
-  brandP.append(brandLink);
-  nav.append(brandP);
+  // Extract content from fragment, unwrapping any section/div wrappers
+  const fragmentContent = fragment.querySelector('.default-content-wrapper') || fragment;
+  while (fragmentContent.firstElementChild) {
+    nav.append(fragmentContent.firstElementChild);
+  }
 
-  // Build sections
-  const sectionsUl = document.createElement('ul');
-  sectionsUl.className = 'nav-sections';
-  navData.sections.forEach((section) => {
-    const li = document.createElement('li');
-    const a = document.createElement('a');
-    a.href = section.href;
-    a.textContent = section.title;
-    li.append(a);
+  // Add class to brand paragraph
+  const brandP = nav.querySelector(':scope > p');
+  if (brandP) {
+    brandP.className = 'nav-brand';
+  }
 
-    // Add dropdown items if they exist
-    if (section.items && section.items.length > 0) {
-      const dropdownUl = document.createElement('ul');
-      section.items.forEach((item) => {
-        const dropdownLi = document.createElement('li');
-        const dropdownA = document.createElement('a');
-        dropdownA.href = item.href;
-        dropdownA.textContent = item.title;
-        dropdownLi.append(dropdownA);
-        dropdownUl.append(dropdownLi);
-      });
-      li.append(dropdownUl);
-    }
+  // Find and setup sections and tools
+  const lists = nav.querySelectorAll(':scope > ul');
+  const sectionsUl = lists[0];
+  const toolsUl = lists[1];
 
-    sectionsUl.append(li);
-  });
-  nav.append(sectionsUl);
+  if (sectionsUl) {
+    sectionsUl.className = 'nav-sections';
+  }
 
-  // Build tools section
-  const toolsUl = document.createElement('ul');
-  toolsUl.className = 'nav-tools';
-  navData.tools.forEach((tool) => {
-    const li = document.createElement('li');
-    const a = document.createElement('a');
-    a.href = tool.href;
-    a.textContent = tool.title;
-    li.append(a);
-    toolsUl.append(li);
-  });
-  nav.append(toolsUl);
+  if (toolsUl) {
+    toolsUl.className = 'nav-tools';
+  }
 
   const navSections = nav.querySelector('.nav-sections');
   if (navSections) {
