@@ -1,6 +1,6 @@
 /* Footer Styles - Updated 2025-12-18 */
 footer {
-  background-color: #1a1a1a;
+  background-color: #000000; /* Black - main footer background */
   color: #ffffff;
   font-size: 14px;
   padding: 0;
@@ -54,27 +54,22 @@ footer .footer > div > p:first-child img {
 /* Main navigation section - contains the grid */
 footer .footer > div > .section:first-of-type {
   position: relative;
-  background-color: #000000;
+  background-color: transparent; /* Transparent - let ::before handle background */
   border-bottom: 1px solid #2a2a2a;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 60px;
   max-width: 1200px;
   margin: 0 auto;
   padding: 50px 32px 40px 32px;
 }
 
-footer .footer > div > .section:first-of-type::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100vw;
-  right: -100vw;
-  bottom: 0;
-  background-color: #000000;
-  z-index: -1;
-  border-bottom: 1px solid #2a2a2a;
+/* Only apply grid directly to .section when it doesn't have .default-content-wrapper */
+footer .footer > div > .section:first-of-type:not(:has(.default-content-wrapper)) {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 60px;
 }
+
+/* Full-width black background - not needed since footer is black */
+/* The black background is now the footer's base color */
 
 footer .footer ul {
   list-style: none;
@@ -190,43 +185,40 @@ footer .default-content-wrapper p {
 footer .default-content-wrapper:has(> ul) {
   display: grid !important;
   grid-template-columns: repeat(4, 1fr);
-  gap: 60px;
-  padding: 0 32px;
+  grid-template-rows: auto auto auto auto;
+  align-items: start;
+  align-content: start;
+  gap: 0 40px;
   max-width: 1200px;
+  width: 100%;
   margin: 0 auto;
   position: relative;
+  box-sizing: border-box;
 }
 
-footer .default-content-wrapper:has(> ul)::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100vw;
-  right: -100vw;
-  bottom: 0;
-  background-color: #000000;
-  z-index: -1;
-}
+/* Black background - not needed since footer is black */
+/* Footer base color #000000 provides the black background */
 
-/* Logo section in DA */
+/* Logo section in DA - height ~91px to match reference */
 footer .default-content-wrapper > p:first-child {
   position: relative;
   margin: 0;
-  padding: 30px 0;
+  padding: 23px 0;
   grid-column: 1 / -1;
-  text-align: center;
-  margin-bottom: 50px;
+  grid-row: 1;
+  text-align: left;
+  z-index: 1;
 }
 
+/* Logo ribbon background - spans full width with charcoal color */
 footer .default-content-wrapper > p:first-child::before {
   content: '';
   position: absolute;
-  top: 0;
+  top: -60px; /* Extend to the top padding of the grid container */
   left: -100vw;
   right: -100vw;
   bottom: 0;
   background-color: #28292B;
-  border-bottom: 1px solid #2a2a2a;
   z-index: -1;
 }
 
@@ -259,57 +251,78 @@ footer .default-content-wrapper > ul:nth-of-type(6) {
   flex-direction: column;
 }
 
+/* All navigation columns start at the same row (row 2) */
+footer .default-content-wrapper > ul:nth-of-type(1),
+footer .default-content-wrapper > ul:nth-of-type(2),
+footer .default-content-wrapper > ul:nth-of-type(4),
+footer .default-content-wrapper > ul:nth-of-type(6) {
+  grid-row: 2;
+  align-self: start;
+}
+
+/* Column 1: Insights */
 footer .default-content-wrapper > ul:nth-of-type(1) {
   grid-column: 1;
-  grid-row: 2;
 }
 
+/* Column 2: Solutions */
 footer .default-content-wrapper > ul:nth-of-type(2) {
   grid-column: 2;
-  grid-row: 2;
+  margin-bottom: 30px;
 }
 
+/* Column 2: Tools (stacks below Solutions) */
 footer .default-content-wrapper > ul:nth-of-type(3) {
   grid-column: 2;
   grid-row: 3;
+  align-self: start;
 }
 
+/* Column 3: How to Invest */
 footer .default-content-wrapper > ul:nth-of-type(4) {
   grid-column: 3;
-  grid-row: 2;
+  margin-bottom: 30px;
 }
 
+/* Column 3: Our Company (stacks below How to Invest) */
 footer .default-content-wrapper > ul:nth-of-type(5) {
   grid-column: 3;
   grid-row: 3;
+  align-self: start;
 }
 
+/* Column 4: Regions */
 footer .default-content-wrapper > ul:nth-of-type(6) {
   grid-column: 4;
-  grid-row: 2;
 }
 
-/* Social media icons - 7th ul in DA */
+/* Social media icons - 7th ul in DA - positioned top-right of navigation area */
 footer .default-content-wrapper > ul:nth-of-type(7) {
-  grid-column: 1 / -1;
+  position: absolute;
+  top: 130px;
+  right: 32px;
   display: flex;
-  gap: 24px;
-  margin: 50px 0 0 0;
-  padding: 40px 0;
-  border-top: 1px solid #2a2a2a;
-  justify-content: center;
+  gap: 16px;
+  margin: 0;
+  padding: 0;
 }
 
 footer .default-content-wrapper > ul:nth-of-type(7) li {
   margin-bottom: 0;
 }
 
+footer .default-content-wrapper > ul:nth-of-type(7) li:first-child {
+  font-weight: 400;
+  margin-bottom: 0;
+}
+
 footer .default-content-wrapper > ul:nth-of-type(7) img,
 footer .default-content-wrapper > ul:nth-of-type(7) picture img {
-  width: 26px;
-  height: 26px;
+  width: 22px;
+  height: 22px;
   transition: opacity 0.3s ease;
-  opacity: 0.7;
+  opacity: 1;
+  filter: brightness(0) invert(1);
 }
 
 footer .default-content-wrapper > ul:nth-of-type(7) a:hover img,
@@ -325,21 +338,26 @@ footer .default-content-wrapper > ul:nth-of-type(7) picture {
 /* Copyright paragraph in DA */
 footer .default-content-wrapper > p:last-of-type {
   grid-column: 1 / span 2;
+  grid-row: 4;
   color: #999999;
   font-size: 13px;
   margin: 0;
-  padding: 40px 0 60px 0;
+  padding: 50px 0 40px 0;
+  border-top: 1px solid #333333;
 }
 
 /* Legal links - 8th ul in DA */
 footer .default-content-wrapper > ul:nth-of-type(8) {
   grid-column: 3 / -1;
+  grid-row: 4;
   display: flex;
   gap: 30px;
   justify-content: flex-end;
+  align-items: center;
   margin: 0;
-  padding: 40px 0 60px 0;
+  padding: 50px 0 40px 0;
   list-style: none;
+  border-top: 1px solid #333333;
 }
 
 footer .default-content-wrapper > ul:nth-of-type(8) li {
